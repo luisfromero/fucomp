@@ -1,4 +1,4 @@
-### Fundamentos de Computadores
+# Fundamentos de Computadores
 
 Accesos directos:
 
