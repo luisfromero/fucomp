@@ -1,0 +1,2 @@
+Este texto es plano. Cada carácter se almacena con un byte. Todos los bytes del archivo se corresponden con un carácter. 
+¿Seguro?
