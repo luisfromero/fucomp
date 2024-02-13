@@ -5,3 +5,4 @@
 * [ChatGPT](/img/chatgpt.pdf)
 * [Antikythera. National Geographic](https://historia.nationalgeographic.com.es/a/mecanismo-antiquitera-reune-saber-astronomico-y-astrologico-epoca_10476)
 * [ArpaNET. BBC](https://www.bbc.com/mundo/noticias-50074166)
+* [La *otra* máquina de Von Neumann](https://www.youtube.com/watch?v=Rpy9Qp7NAaw)
