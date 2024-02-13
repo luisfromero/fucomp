@@ -4,7 +4,7 @@ Este es el punto de entrada a la asignatura Fundamentos de Computadores.
 
 Accesos directos:
 
-* [Campus virtual 2024](https://eii.cv.uma.es/user/index.php?id=4707)
+* [Campus virtual 2024](https://eii.cv.uma.es/course/view.php?id=4707)
 * [Tutorías online](https://meet.google.com/pyt-desz-dzn)
 * [Calendario lectivo](http://casium.uma.es/calendar)
 * [Herramienta de docencia CASIUM](http://casium.uma.es)
