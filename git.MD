@@ -11,7 +11,15 @@ En resumen, GitHub es una plataforma en línea que ofrece herramientas para aloj
 * Crear un repositorio vacío 
     (por ejemplo, fucomp)
 
+## Instalar git y establecer usuario y contraseña
+
+C:\Windows\System32>git config --global user.email felipe@uma.es
+C:\Windows\System32>git config --global user.name luisfromero
+C:\Windows\System32>git config --global user.password ********
+En VSCode pedirá también la autenticación
+
 ## Ejecutar la siguiente secuencia en un terminal para crear un repositorio
+
 
 
 ```cs

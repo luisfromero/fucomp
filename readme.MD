@@ -1,15 +1,25 @@
 # Fundamentos de Computadores
 
+Este es el punto de entrada a la asignatura Fundamentos de Computadores. 
+
 Accesos directos:
 
-* [Campus virtual 2023](https://eii.cv.uma.es/course/view.php?id=4155)
+* [Campus virtual 2024](https://eii.cv.uma.es/user/index.php?id=4707)
 * [Tutorías online](https://meet.google.com/pyt-desz-dzn)
 * [Calendario lectivo](http://casium.uma.es/calendar)
-* [CASIUM](http://casium.uma.es)
+* [Herramienta de docencia CASIUM](http://casium.uma.es)
 
 Videos
 
 * [Instalación de Python en Windows](https://studio.youtube.com/video/A85ns1sTnQU/edit)
+
+Lecturas
+
+* [John Von Neumann, Muy Interesante](https://www.muyinteresante.es/ciencia/59360.html)
+* [Las programadoras del ENIAC, BBC](https://www.bbc.com/mundo/noticias-64575963)
+* [ChatGPT](/img/chatgpt.pdf)
+* [Antikythera. National Geographic](https://historia.nationalgeographic.com.es/a/mecanismo-antiquitera-reune-saber-astronomico-y-astrologico-epoca_10476)
+* [ArpaNET. BBC](https://www.bbc.com/mundo/noticias-50074166)
 * [La *otra* máquina de Von Neumann](https://www.youtube.com/watch?v=Rpy9Qp7NAaw)
 
 Cursos
