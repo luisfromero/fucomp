@@ -15,6 +15,7 @@ Videos
 
 Lecturas
 
+* [John Von Neumann, National Geographics](https://www.nationalgeographic.com.es/ciencia/como-john-von-neumann-revoluciono-la-informatica_21580)
 * [John Von Neumann, Muy Interesante](https://www.muyinteresante.es/ciencia/59360.html)
 * [Las programadoras del ENIAC, BBC](https://www.bbc.com/mundo/noticias-64575963)
 * [ChatGPT](/img/chatgpt.pdf)
