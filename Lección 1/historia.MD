@@ -1,11 +1,34 @@
 # Apuntes de Historia de la Computación
 
+## Antes de empezar...
+
+Línea evolutiva más aceptada actualmente:
+
+### Homo habilis (≈2.4 - 1.4 millones de años)
+
+Primer homínido con uso claro de herramientas.
+Considerado el primer representante del género Homo, aunque algunos científicos creen que podría ser más un "primo" que un ancestro directo.
+### Homo erectus (≈1.9 millones - 110,000 años)
+Primera especie humana en expandirse fuera de África.
+Posible ancestro común de Homo sapiens, Homo neanderthalensis y Homo denisovensis.
+### Homo antecessor (≈1.2 - 800,000 años)
+Encontrado en España, algunos científicos creen que es un antecesor de Homo heidelbergensis, pero su posición exacta sigue en discusión.
+### Homo heidelbergensis (≈700,000 - 300,000 años)
+Probablemente dio origen a Homo sapiens en África y a los neandertales en Europa.
+Tenía un cerebro grande y habilidades avanzadas de caza y supervivencia.
+### Homo sapiens (≈300,000 años - presente)
+Nuestra especie, que evolucionó en África y se expandió por el mundo.
+
 ## El hombre prehistórico
 
-No hay evidencia clara de cuándo exactamente el homo sapiens aprendió a contar con el sistema decimal, pero se cree que pudo haber ocurrido alrededor del cuarto milenio antes de Cristo. Se han encontrado restos arqueológicos de huesos tallados con marcas que sugieren que se usaban para contar, y se cree que las primeras formas de numeración se desarrollaron a través del uso de los dedos y las manos. Con el tiempo, los humanos comenzaron a utilizar otros objetos, como piedras, para llevar un registro de sus pertenencias y transacciones comerciales, lo que finalmente llevó al desarrollo de sistemas de numeración más complejos y sofisticados.
+<div style=text-align:center;>
+<img src='../img/lebombo_2.jpg' width=300></div>
+
+No hay evidencia clara de cuándo exactamente el homo sapiens aprendió a contar con el sistema decimal, pero se cree que pudo haber ocurrido hace unos 50000 años. Se han encontrado restos arqueológicos de huesos tallados con marcas que sugieren que se usaban para contar (hueso de Lebombo), y se cree que las primeras formas de numeración se desarrollaron a través del uso de los dedos y las manos. Con el tiempo, los humanos comenzaron a utilizar otros objetos, como piedras, para llevar un registro de sus pertenencias y transacciones comerciales, lo que finalmente llevó al desarrollo de sistemas de numeración más complejos y sofisticados.
 
 <div style=text-align:center;>
-<img src='./img/dall-e1.png' width=300></div>
+<img src='../img/dall-e1.png' width=300></div>
+
 
 ## El sistema sexagesimal
 
@@ -142,3 +165,37 @@ Este caso fue importante porque sentó un precedente en el campo de la propiedad
 
 
 [Las programadoras del ENIAC](https://www.bbc.com/mundo/noticias-64575963)
+
+## La arquitectura de Von Neumann
+
+La arquitectura de Von Neumann es un modelo de arquitectura para computadoras que utiliza una única memoria para almacenar tanto los datos como las instrucciones del programa. Esta arquitectura fue propuesta por el matemático húngaro-estadounidense John von Neumann y ha sido la base de la mayoría de las computadoras modernas.
+
+Diferencias respecto a las ideas de Babbage, Hollerith y Turing
+
+Si bien Charles Babbage es considerado el "padre de la computación" por sus diseños de la máquina analítica, esta nunca se construyó, por lo que no pudo implementar sus ideas. Herman Hollerith, por su parte, desarrolló máquinas tabuladoras para el procesamiento de datos, pero estas no eran programables como las computadoras modernas. Alan Turing, aunque no construyó computadoras, desarrolló la máquina de Turing, un modelo teórico que sentó las bases para la computación moderna y el concepto de algoritmo.
+
+La principal diferencia de la arquitectura de Von Neumann respecto a estos predecesores es que permitía almacenar tanto los datos como las instrucciones en la misma memoria. Esto posibilitó que las computadoras fueran más flexibles y potentes, ya que podían ejecutar diferentes programas sin necesidad de modificar su hardware.
+
+### Partes de la máquina de Von Neumann
+
+La máquina de Von Neumann se compone de las siguientes partes:
+
+Unidad Central de Procesamiento (CPU): Es el cerebro de la computadora y se encarga de ejecutar las instrucciones del programa. A su vez, la CPU se divide en dos unidades:
+
+Unidad de Control (CU): Se encarga de controlar la secuencia de ejecución de las instrucciones y de coordinar el funcionamiento de las demás partes de la computadora.
+Unidad Aritmético-Lógica (ALU): Se encarga de realizar las operaciones aritméticas y lógicas.
+Memoria: Almacena tanto los datos como las instrucciones del programa. La memoria se divide en celdas, cada una con una dirección única.
+
+Dispositivos de entrada/salida (E/S): Permiten la comunicación de la computadora con el exterior. Los dispositivos de entrada permiten introducir datos en la computadora (por ejemplo, el teclado o el ratón), mientras que los dispositivos de salida permiten mostrar los resultados del procesamiento (por ejemplo, la pantalla o la impresora).
+
+### Ciclo de instrucción
+
+El ciclo de instrucción es la secuencia de pasos que sigue la computadora para ejecutar una instrucción del programa. Este ciclo consta de las siguientes fases:
+
+Búsqueda (Fetch): La CPU busca la instrucción en la memoria y la carga en un registro interno.
+Decodificación (Decode): La CPU decodifica la instrucción para determinar qué operación debe realizar.
+Ejecución (Execute): La CPU ejecuta la operación especificada por la instrucción.
+Almacenamiento (Store): Si la instrucción produce un resultado, este se almacena en la memoria.
+Una vez completado el ciclo de instrucción, la CPU pasa a la siguiente instrucción del programa y repite el proceso. Este ciclo se repite continuamente hasta que se completa la ejecución del programa.
+
+La arquitectura de Von Neumann ha sido fundamental para el desarrollo de la computación moderna. Gracias a ella, las computadoras son capaces de ejecutar una gran variedad de programas de forma rápida y eficiente.
