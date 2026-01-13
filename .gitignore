@@ -2,3 +2,32 @@
 /gitignore
 fucomp.code-workspace
 privado.MD
+
+# PlatformIO/ESP-IDF archivos temporales
+Practica5/build/
+Practica5/.pio/
+Practica5/.vscode/
+Practica5/sdkconfig
+Practica5/sdkconfig.old
+
+# Archivos de solución del profesor  
+Practica5/src/secuencia-solucion.S
+
+# Archivos temporales del sistema
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Archivos de compilación
+*.o
+*.elf
+*.bin
+*.map
+
+# Directorio build global (pero mantenemos archivos en /apps/)
+/build/
+
+# Configuraciones de VS Code globales
+/.vscode/
+apps/todas.zip

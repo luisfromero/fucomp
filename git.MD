@@ -7,27 +7,26 @@ En resumen, GitHub es una plataforma en línea que ofrece herramientas para aloj
 ### crear repositorio remoto en la web, sin readme
 
 * Abrir una cuenta en github u otra plataforma (bitbucket, gitlab)
-    (por ejemplo, luisfromero)
+    (por ejemplo, usuario123)
 * Crear un repositorio vacío 
-    (por ejemplo, fucomp)
+    (por ejemplo, mi-proyecto)
 
 ## Instalar git y establecer usuario y contraseña
 
-C:\Windows\System32>git config --global user.email felipe@uma.es
-C:\Windows\System32>git config --global user.name luisfromero
-C:\Windows\System32>git config --global user.password ********
+```bash
+git config --global user.email tu-email@dominio.com
+git config --global user.name tu-usuario
+```
 En VSCode pedirá también la autenticación
 
 ## Ejecutar la siguiente secuencia en un terminal para crear un repositorio
 
-
-
-```cs
+```bash
 git init .
 git add .
 git commit -m "primer commit"
 git branch -M main
-git remote add origin https://github.com/luisfromero/fucomp
+git remote add origin https://github.com/tu-usuario/tu-repositorio
 git push -u origin main 
 ```
 
