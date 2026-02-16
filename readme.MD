@@ -2,16 +2,21 @@
 
 Este es el punto de entrada a la asignatura Fundamentos de Computadores. 
 
+## Evaluación
+
+[Este documentos](evaluacion.md) describe cómo se evalúa la aignatura
+
 Accesos directos:
 
-* [Campus virtual 2024](https://eii.cv.uma.es/course/view.php?id=4707)
+* [Campus virtual 2024](https://eii.cv.uma.es/course/view.php?id=5927)
 * [Tutorías online](https://meet.google.com/pyt-desz-dzn)
-* [Calendario lectivo](http://casium.uma.es/calendar)
+* [Calendario lectivo A](https://casium.uma.es/calendario?A)
+* [Calendario lectivo B](https://casium.uma.es/calendario?B)
 * [Herramienta de docencia CASIUM](http://casium.uma.es)
 
 Videos
 
-* [Instalación de Python en Windows](https://studio.youtube.com/video/A85ns1sTnQU/edit)
+* [Instalación de Python en Windows](https://www.youtube.com/watch?v=A85ns1sTnQU/edit)
 
 Lecturas
 

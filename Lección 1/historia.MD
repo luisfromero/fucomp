@@ -22,12 +22,12 @@ Nuestra especie, que evolucionó en África y se expandió por el mundo.
 ## El hombre prehistórico
 
 <div style=text-align:center;>
-<img src='../img/lebombo_2.jpg' width=300></div>
+<img src='img/lebombo_2.jpg' width=300></div>
 
 No hay evidencia clara de cuándo exactamente el homo sapiens aprendió a contar con el sistema decimal, pero se cree que pudo haber ocurrido hace unos 50000 años. Se han encontrado restos arqueológicos de huesos tallados con marcas que sugieren que se usaban para contar (hueso de Lebombo), y se cree que las primeras formas de numeración se desarrollaron a través del uso de los dedos y las manos. Con el tiempo, los humanos comenzaron a utilizar otros objetos, como piedras, para llevar un registro de sus pertenencias y transacciones comerciales, lo que finalmente llevó al desarrollo de sistemas de numeración más complejos y sofisticados.
 
 <div style=text-align:center;>
-<img src='../img/dall-e1.png' width=300></div>
+<img src='img/dall-e1.png' width=300></div>
 
 
 ## El sistema sexagesimal
@@ -105,7 +105,9 @@ La [Máquina Analítica](https://www.youtube.com/watch?v=eMy4vSZ-J_I&t=324s), di
 
 Ada Lovelace, también conocida como Ada Byron, fue una matemática y escritora británica del siglo XIX. Nacida en 1815 en Londres, fue hija del famoso poeta Lord Byron y de la matemática Annabella Milbanke. Ada es conocida por su trabajo con Charles Babbage en el diseño de la Máquina Analítica, lo que la convierte en la primera programadora de la historia. Ada es famosa por su comprensión de la capacidad de las máquinas para ir más allá de simplemente calcular y por su visión de una posible colaboración entre las máquinas y el ser humano en la creación de trabajos creativos. Su trabajo y pensamiento pioneros en el campo de la informática la convierten en una figura clave en la historia de la tecnología y un modelo a seguir para mujeres interesadas en la ciencia y la tecnología.
 
-## IBM
+## IBM. De la patata al bit
+
+Podríamos decir que, de forma muy indirecta, IBM le debe su existencia a una patata en mal estado. La llegada masiva de inmigrantes huyendo de la hambruna irlandesa provocó tal explosión demográfica que el censo de EE. UU. se convirtió en una pesadilla logística: ¡tardaron casi diez años en tabular el censo de 1880!:
 
 Hollerith, o Herman Hollerith, fue un inventor estadounidense del siglo XIX que es conocido por desarrollar la máquina tabuladora de tarjetas perforadas. Nacido en Nueva York en 1860, Hollerith se graduó en ingeniería eléctrica en el Instituto de Tecnología de Massachusetts en 1879. Durante sus estudios, comenzó a interesarse por la problemática del procesamiento de grandes cantidades de datos.
 
@@ -113,7 +115,7 @@ En 1880, Hollerith se unió a la Oficina de Censos de los Estados Unidos, donde 
 
 La máquina que Hollerith desarrolló utilizaba tarjetas perforadas para almacenar y procesar información. Cada tarjeta representaba a una persona en el censo y contenía información como su nombre, edad, sexo y ocupación, así como información sobre su hogar y su familia. Los agujeros perforados en las tarjetas representaban diferentes categorías de datos y se leían mediante una serie de peines mecánicos conectados a una unidad central de procesamiento.
 
-La máquina de Hollerith se utilizó con éxito en el censo de 1890, reduciendo significativamente el tiempo necesario para procesar la información y eliminando errores de recopilación de datos. Posteriormente, Hollerith fundó la Tabulating Machine Company en 1896, que luego se fusionó con otras compañías para formar IBM en 1924.
+La máquina de Hollerith se utilizó con éxito en el censo de 1890, reduciendo a pocas semanas el tiempo necesario para procesar la información y eliminando errores de recopilación de datos. Posteriormente, Hollerith fundó la Tabulating Machine Company en 1896, que luego se fusionó con otras compañías para formar IBM en 1924.
 
 El sistema de tarjetas perforadas de Hollerith se convirtió en la base de la tecnología de procesamiento de datos durante muchos años y sentó las bases para el desarrollo de la tecnología informática moderna. Hollerith fue un pionero en el campo de la automatización de procesos y su legado sigue siendo evidente en la forma en que procesamos, almacenamos y analizamos datos hoy en día.
 
@@ -121,13 +123,29 @@ El sistema de tarjetas perforadas de Hollerith se convirtió en la base de la te
 
 Leonardo Torres Quevedo fue un ingeniero e inventor español del siglo XIX y principios del siglo XX. Nació en Cantabria en 1852 y estudió ingeniería de caminos en la Universidad Central de Madrid. Durante su carrera, desarrolló numerosas invenciones e innovaciones en diferentes campos, incluyendo la ingeniería civil, la mecánica, la electrónica y la informática.
 
-Una de las contribuciones más destacadas de Torres Quevedo fue su invención del telekino, un dispositivo mecánico que permitía controlar de forma remota maquinaria y vehículos, utilizando señales eléctricas y un sistema de cables. Este invento tuvo aplicaciones en la industria y en la exploración científica, y sentó las bases para el desarrollo de la robótica.
+Mientras que en Estados Unidos se centraban en tabular datos masivos, el cántabro estaba obsesionado con algo mucho más ambicioso: la **automatización del pensamiento**. Para él, el relé electromecánico no era solo un interruptor, era el "ladrillo" con el que construir lógica.
 
-Otra de sus invenciones destacadas fue el calculador analógico, una máquina capaz de realizar cálculos matemáticos complejos mediante la manipulación mecánica de ruedas y engranajes. Esta máquina fue utilizada en la resolución de problemas de navegación y geodesia, y fue un precursor de las computadoras analógicas.
+### 1. El Telekino (1903): El abuelo del mando a distancia
+
+Fue el primer sistema de radio control de la historia. Para que un barco pudiera moverse sin tripulación, Torres Quevedo diseñó un sistema de **relés que interpretaban una secuencia de impulsos telegráficos**. El relé decidía, según el código recibido, si el timón debía girar a babor o a estribor. Fue el nacimiento de la computación aplicada al movimiento.
+
+### 2. El Ajedrecista (1912): La primera "IA" electromecánica
+
+Este es, posiblemente, su diseño más famoso. Utilizaba una compleja red de **relés eléctricos para "leer" la posición de las piezas** en el tablero y decidir su siguiente movimiento.
+
+* No era un truco mecánico; era lógica pura.
+* Si el humano hacía una jugada ilegal, el autómata encendía una luz de aviso. ¡Todo gracias a circuitos conmutados por relés!
+
+### 3. El Aritmómetro Electromecánico (1920)
+
+Si buscas el eslabón perdido entre la máquina de Hollerith y los ordenadores modernos, es este. Torres Quevedo presentó en París una calculadora que conectaba una máquina de escribir a un "cerebro" lleno de relés.
+
+* Fue el **primer ordenador electromecánico de la historia** en el sentido moderno.
+* A diferencia de las máquinas mecánicas de la época, aquí el cálculo no dependía de engranajes que giraban, sino de relés que se abrían y cerraban, exactamente como lo hacen hoy los transistores de tu móvil (solo que con mucho más ruido y chispas).
 
 Además, Torres Quevedo también desarrolló un sistema de regulación automática de la altura de los globos aerostáticos, un dispositivo para la elevación de cargas pesadas, y un gran número de innovaciones en el campo de la ingeniería civil, como el Puente de Vizcaya, considerado una obra maestra de la ingeniería.
 
-En general, las innovaciones de Torres Quevedo tuvieron un gran impacto en la ingeniería y la ciencia, y sentaron las bases para el desarrollo de la automatización y la informática moderna. Fue uno de los grandes ingenieros e inventores de la época y sus contribuciones siguen siendo valoradas y estudiadas en la actualidad.
+En resumen, mientras IBM perfeccionaba el almacenamiento de datos, Torres Quevedo estaba usando los relés para demostrar que **las máquinas podían tomar decisiones**. Fue un visionario que entendió, décadas antes que nadie, que la electricidad podía servir para procesar lógica, no solo para dar luz.
 
 ## La máquina de Turing (y la definición de computador)
 
@@ -139,6 +157,14 @@ Una de las primeras definiciones del computador (como máquina capaz de realizar
 
 ## Eniac
 
+Justo tal día como hoy, hace 80 años, nació el primer computador moderno.
+
+<div style=text-align:center;>
+<img src='img/500004288-03-02.jpg' width=300></div>
+
+Titular del 16 de febrero de 1946 en el New York Times
+
+
 El ENIAC (Electronic Numerical Integrator and Computer) fue una de las primeras computadoras electrónicas digitales *de propósito general*, construida en la década de 1940 por los ingenieros estadounidenses John Mauchly y J. Presper Eckert. A continuación se detallan algunas de sus características técnicas:
 * Peso: 27 toneladas.
 * Dimensiones: 2,4 x 0,9 x 30,5 metros.
@@ -149,11 +175,6 @@ El ENIAC (Electronic Numerical Integrator and Computer) fue una de las primeras 
 * La programación del ENIAC era un proceso complejo y laborioso que requería que los operadores conectaran manualmente los componentes de la máquina para realizar las operaciones deseadas. No existía un lenguaje de programación como tal, sino que los programas se escribían a mano y se traducían en instrucciones para la máquina.
 * A pesar de sus limitaciones, el ENIAC sentó las bases para el desarrollo de la tecnología informática moderna y se considera una de las máquinas más importantes en la historia de la computación.
 
-John von Neumann participó en el proyecto ENIAC en calidad de asesor técnico. Fue uno de los principales expertos en computación y matemáticas de su tiempo y su contribución fue esencial en la programación y diseño del ENIAC. Von Neumann trabajó junto a los creadores del ENIAC, John Mauchly y J. Presper Eckert, para diseñar el primer lenguaje de programación de alto nivel para el ENIAC, llamado Short Code.
-
-Además, von Neumann también contribuyó a la creación de la arquitectura de von Neumann, una arquitectura de computadoras que sigue siendo la base de la mayoría de las computadoras modernas. Esta arquitectura es un concepto fundamental en el diseño de las computadoras, y se basa en la idea de que los datos y las instrucciones se almacenan en la misma memoria, lo que permite a la computadora ejecutar instrucciones de manera más eficiente.
-
-Por tanto, la participación de von Neumann en el proyecto ENIAC fue fundamental en el desarrollo de la informática moderna, y su contribución fue esencial para el desarrollo de los primeros ordenadores electrónicos y la programación informática.
 
 ## La demanda de Atanasov
 
@@ -165,6 +186,15 @@ Este caso fue importante porque sentó un precedente en el campo de la propiedad
 
 
 [Las programadoras del ENIAC](https://www.bbc.com/mundo/noticias-64575963)
+
+
+## John Von Neumann
+
+John von Neumann participó en el proyecto ENIAC en calidad de asesor técnico. Fue uno de los principales expertos en computación y matemáticas de su tiempo y su contribución fue esencial en la programación y diseño del ENIAC. Von Neumann trabajó junto a los creadores del ENIAC, John Mauchly y J. Presper Eckert, para diseñar el primer lenguaje de programación de alto nivel para el ENIAC, llamado Short Code.
+
+Además, von Neumann también contribuyó a la creación de la arquitectura de von Neumann, una arquitectura de computadoras que sigue siendo la base de la mayoría de las computadoras modernas. Esta arquitectura es un concepto fundamental en el diseño de las computadoras, y se basa en la idea de que los datos y las instrucciones se almacenan en la misma memoria, lo que permite a la computadora ejecutar instrucciones de manera más eficiente.
+
+Por tanto, la participación de von Neumann en el proyecto ENIAC fue fundamental en el desarrollo de la informática moderna, y su contribución fue esencial para el desarrollo de los primeros ordenadores electrónicos y la programación informática.
 
 ## La arquitectura de Von Neumann
 
