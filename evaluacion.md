@@ -27,7 +27,7 @@ Es importante destacar que el Tema 3 ocupa una posición central en el desarroll
 
 ### Metodología de Evaluación Teórica
 
-Todos los exámenes teóricos son de carácter individual y se realizan mediante el sistema de evaluación automática CASIUM, desarrollado por el equipo docente de la asignatura. Este sistema presenta características singulares que garantizan la equidad y la objetividad del proceso evaluativo:
+Todos los exámenes teóricos son de carácter individual y se realizan mediante el sistema de evaluación automática **CASIUM** ([Ver ejemplo en casium.uma.es](https://casium.uma.es/examen_t2), desarrollado por el equipo docente de la asignatura. Este sistema presenta características singulares que garantizan la equidad y la objetividad del proceso evaluativo:
 
 - **Versatilidad**: El sistema genera más de 2^160 combinaciones posibles para cada examen, lo que permite a los estudiantes practicar de forma ilimitada en condiciones idénticas a las del examen oficial.
 
