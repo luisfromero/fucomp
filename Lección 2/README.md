@@ -1,3 +1,7 @@
+# Actividad inicial (ciclo de instrucción)
+
+Consulta este [archivo](actividad1.MD).
+
 # Historia de la Informática: De los Transistores a la Computación Cuántica
 
 ## Índice
