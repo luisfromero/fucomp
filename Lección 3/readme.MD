@@ -46,15 +46,24 @@ Esto explica por qué en enunciados siempre se insiste en “representar en C-2�
 ### 2.1 Sistema Posicional
 
 El **binario natural** es un sistema posicional, igual que el decimal, pero con base 2 en lugar de base 10.  
+<<<<<<< HEAD
 En un número binario con **n** bits, cada dígito **dᵢ** toma valor 0 o 1 y tiene un peso **2ⁱ**, siendo **i** la posición empezando en 0 por la derecha:
 
 ```math
 Valor = Σ(dᵢ · 2ⁱ) para i desde 0 hasta n-1
 ```
+=======
+En un número binario con \( n \) bits, cada dígito \( d_i \) toma valor 0 o 1 y tiene un peso \( 2^i \), siendo \( i \) la posición empezando en 0 por la derecha:
+
+\[
+\text{Valor} = \sum_{i=0}^{n-1} d_i \cdot 2^i
+\]
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 
 Ejemplo: `010101`
 
 - Posiciones (de izquierda a derecha): 5 4 3 2 1 0  
+<<<<<<< HEAD
 - Pesos: 2⁵, 2⁴, 2³, 2², 2¹, 2⁰
 - Cálculo del valor:
 
@@ -64,6 +73,17 @@ Ejemplo: `010101`
 
 Por tanto, `010101` en binario natural representa el número decimal `21`.  
 Este proceso es análogo a leer un número decimal: en `432`, el 4 vale 4·10², el 3 pesa como decenas y el 2 como unidades, pero en lugar de base 10 usamos base 2.
+=======
+- Pesos: \(2^5, 2^4, 2^3, 2^2, 2^1, 2^0\)  
+- Cálculo del valor:
+
+\[
+0 \cdot 32 + 1 \cdot 16 + 0 \cdot 8 + 1 \cdot 4 + 0 \cdot 2 + 1 \cdot 1 = 21
+\]
+
+Por tanto, `010101` en binario natural representa el número decimal `21`.  
+Este proceso es análogo a leer un número decimal: en `432`, el 4 vale \(4 \cdot 10^2\), etc., pero en lugar de base 10 usamos base 2.
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 
 ### 2.2 Conversión Decimal → Binario
 
@@ -103,14 +123,21 @@ Resultado: `1010`.
 
 Conviene memorizar las potencias más típicas porque aparecen en muchas preguntas:
 
+<<<<<<< HEAD
 - **2¹⁰ = 1024 ≈ 1K** → `1` seguido de 10 ceros binarios (`10000000000`)
 - **2²⁰ ≈ 1M** → `1` seguido de 20 ceros
 - **2³⁰ ≈ 1G** → `1` seguido de 30 ceros
+=======
+- \(2^{10} = 1024 \approx 1\text{K}\) → `1` seguido de 10 ceros binarios (`10000000000`).  
+- \(2^{20} \approx 1\text{M}\) → `1` seguido de 20 ceros.  
+- \(2^{30} \approx 1\text{G}\) → `1` seguido de 30 ceros.
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 
 Saber esto ayuda para estimar tamaños de memoria, rangos de enteros, etc.
 
 #### Patrones útiles
 
+<<<<<<< HEAD
 - `1` seguido de **n** ceros (`100...0`) equivale a **2ⁿ**
 - **n** unos (`111...1`) equivale a **2ⁿ - 1**
 - En general:
@@ -121,13 +148,29 @@ Saber esto ayuda para estimar tamaños de memoria, rangos de enteros, etc.
 
 Ejemplo:  
 `1111` (4 unos) = **2⁴ - 1 = 16 - 1 = 15** = 8 + 4 + 2 + 1
+=======
+- `1` seguido de \(n\) ceros (`100...0`) equivale a \(2^n\).  
+- `n` unos (`111...1`) equivale a \(2^n - 1\).  
+- En general:
+
+\[
+2^n - 1 = 2^{n-1} + 2^{n-2} + \dots + 2 + 1
+\]
+
+Ejemplo:  
+`1111` (4 unos) = \(2^4 - 1 = 16 - 1 = 15\) = 8 + 4 + 2 + 1.
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 
 #### Otros trucos rápidos
 
 - Los ceros a la izquierda **no cambian** el valor del número:  
   `001100` = `1100` = 12.  
 - Un número binario **impar** siempre termina en `1`; un número **par** termina en `0`.  
+<<<<<<< HEAD
 - Los últimos **k** bits determinan el valor módulo **2ᵏ**:  
+=======
+- Los últimos \(k\) bits determinan el valor módulo \(2^k\):  
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
   - Últimos 2 bits → valor módulo 4.  
   - Últimos 3 bits → valor módulo 8.
 
@@ -142,7 +185,11 @@ Memorizar las representaciones de los números del 0 al 15 ayuda mucho:
 ### 2.4 Otras Bases (Octal y Hexadecimal)
 
 Para compactar cadenas largas de bits se utilizan bases intermedias: **octal** (base 8) y **hexadecimal** (base 16).  
+<<<<<<< HEAD
 Ambas se relacionan muy bien con el binario porque 8 = **2³** y 16 = **2⁴**.
+=======
+Ambas se relacionan muy bien con el binario porque 8 = \(2^3\) y 16 = \(2^4\).
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 
 **Octal (base 8)**
 
@@ -206,7 +253,11 @@ Dos esquemas básicos:
 
 #### Signo-Magnitud (S-M)
 
+<<<<<<< HEAD
 - Se usa 1 bit de signo + **(n-1)** bits para la magnitud en binario natural.  
+=======
+- Se usa 1 bit de signo + \(n-1\) bits para la magnitud en binario natural.  
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 - Ejemplo con 8 bits:
   - `00010111` → signo 0, magnitud `0010111` → +23.  
   - `10010111` → signo 1, magnitud `0010111` → -23.  
@@ -217,8 +268,13 @@ Dos esquemas básicos:
 
 #### Exceso a X (biased)
 
+<<<<<<< HEAD
 - La idea es desplazar todos los valores sumando una constante **X** (llamada exceso)
 - Un número N se codifica como **N + X** en binario natural  
+=======
+- La idea es desplazar todos los valores sumando una constante \(X\) (llamada exceso).  
+- Un número N se codifica como \(N + X\) en binario natural.  
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 - Ejemplo: Exceso a 127 con 8 bits:
   - `0` → `0 + 127 = 127` → `01111111`.  
   - `-127` → `-127 + 127 = 0` → `00000000`.
@@ -231,6 +287,7 @@ La representación en **complemento a 2** (C-2) es la más utilizada en procesad
 
 #### Representación
 
+<<<<<<< HEAD
 Con **n** bits:
 
 - Números **positivos**: se codifican como binario natural, igual que siempre
@@ -241,6 +298,18 @@ El rango de valores representables con C-2 es:
 ```math
 -2^(n-1) a 2^(n-1) - 1
 ```
+=======
+Con \(n\) bits:
+
+- Números **positivos**: se codifican como binario natural, igual que siempre.  
+- Números **negativos**: se representan como \(2^n - |N|\) en binario.
+
+El rango de valores representables con C-2 es:
+
+\[
+-2^{n-1} \text{ a } 2^{n-1} - 1
+\]
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 
 Ejemplo con 8 bits: rango de -128 a 127.
 
@@ -263,9 +332,15 @@ Resultado: `11101001` es la representación en C-2 de -23 (con 8 bits).
 
 **Método 2: Calcular \(2^n - |N|\)**
 
+<<<<<<< HEAD
 Con 8 bits, **2⁸ = 256**:
 
 - **-23** se codifica como **256 - 23 = 233**  
+=======
+Con 8 bits, \(2^8 = 256\):
+
+- \(-23\) se codifica como \(256 - 23 = 233\).  
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 - 233 en binario: `11101001`.  
 - Coincide con el resultado anterior.
 
@@ -278,7 +353,11 @@ Ejemplo: ¿Qué representa `100111` en C-2 (6 bits)?
    - Restar 1: `100111` → `100110`.  
    - Invertir los bits: `100110` → `011001`.  
 3. `011001` en binario natural es:
+<<<<<<< HEAD
    - 0·32 + 1·16 + 1·8 + 0·4 + 0·2 + 1·1 = **25**  
+=======
+   - \(0 \cdot 32 + 1 \cdot 16 + 1 \cdot 8 + 0 \cdot 4 + 0 \cdot 2 + 1 \cdot 1 = 25\).  
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 4. Por tanto, el valor decimal es `-25`.
 
 Truco: si el primer bit es `0`, el valor es el binario natural; si es `1`, hay que aplicar el proceso de “restar 1 e invertir” para hallar la magnitud.
@@ -320,7 +399,11 @@ Reglas según formato:
 | Binario Natural  | Añadir ceros a la izquierda                       |
 | Signo-Magnitud   | Insertar ceros entre el bit de signo y la magnitud |
 | Exceso           | Añadir ceros a la izquierda (manteniendo el exceso) |
+<<<<<<< HEAD
 | C-1 y C-2        | Repetir el bit de signo (MSB) **m** veces         |
+=======
+| C-1 y C-2        | Repetir el bit de signo (MSB) \(m\) veces         |
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 
 Ejemplo C-2: `11101001` (8 bits) → a 16 bits:
 
@@ -345,15 +428,26 @@ Para representar números con parte fraccionaria se puede utilizar **punto fijo*
 En un formato 4.4, si numeramos posiciones desde la derecha:
 
 - Bits de la parte fraccionaria tienen pesos:
+<<<<<<< HEAD
   - **2⁻¹ = 0.5**
   - **2⁻² = 0.25**
   - **2⁻³ = 0.125**
   - **2⁻⁴ = 0.0625**
+=======
+  - \(2^{-1} = 0.5\)  
+  - \(2^{-2} = 0.25\)  
+  - \(2^{-3} = 0.125\)  
+  - \(2^{-4} = 0.0625\)
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 
 Ejemplo: `10.1001` en un formato con 4 bits fraccionarios:
 
 - Parte entera `10` → 2 decimal.  
+<<<<<<< HEAD
 - Parte fraccionaria `.1001` → 1·0.5 + 0·0.25 + 0·0.125 + 1·0.0625 = **0.5625**  
+=======
+- Parte fraccionaria `.1001` → \(1 \cdot 0.5 + 0 \cdot 0.25 + 0 \cdot 0.125 + 1 \cdot 0.0625 = 0.5625\).  
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 - Valor total: 2.5625.
 
 ### 4.2 Conversión de Fracciones
@@ -419,7 +513,11 @@ Fíjate cómo en C-1 y C-2, al extender de 8 a 16 bits, se repite el bit de sign
 Primero, pasamos a binario:
 
 - `23` = `10111`  
+<<<<<<< HEAD
 - `0.25` = `0.01` en binario (porque 0.25 = 1/4 = **2⁻²**)  
+=======
+- `0.25` = `0.01` en binario (porque 0.25 = 1/4 = \(2^{-2}\))  
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 
 Luego:
 
@@ -447,6 +545,7 @@ Estos ejemplos combinan varios conceptos: paso a binario, representación con si
 
 ### 5.1 Problema del Torneo (Ejemplo de \(2^n - 1\))
 
+<<<<<<< HEAD
 Planteamiento:
 
 > En un torneo de eliminación directa con 1024 jugadores, ¿cuántos partidos se juegan en total?
@@ -456,6 +555,12 @@ Cálculo sin pensar:
 - En primera ronda se juegan 512 partidos, 256 en segunda, 128 en tercera, y así, 64, 32, 16, y 8 en octavos. 4 cuartos, 2 semifinales y 1 final. Suman 1023 partidos.
 
 
+=======
+Planteamiento típico:
+
+> En un torneo de eliminación directa con 1024 jugadores, ¿cuántos partidos se juegan en total?
+
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 Razonamiento:
 
 - Cada partido elimina exactamente a un jugador.  
@@ -464,8 +569,13 @@ Razonamiento:
 
 Cálculo rápido usando potencias de 2:
 
+<<<<<<< HEAD
 - 1024 = **2¹⁰**
 - Número de partidos = **2¹⁰ - 1 = 1023**  
+=======
+- 1024 = \(2^{10}\).  
+- Número de partidos = \(2^{10} - 1 = 1023\).  
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 
 Este problema ilustra de forma intuitiva la fórmula general \(2^n - 1\), que también aparece cuando se habla de “todos unos” en binario.
 
@@ -506,12 +616,21 @@ Tabla para repasar fórmulas y reglas clave:
 
 | Concepto                 | Fórmula/Regla                             |
 |--------------------------|-------------------------------------------|
+<<<<<<< HEAD
 | **Binario → Decimal**    | Σ(dᵢ · 2ⁱ)                                |
+=======
+| **Binario → Decimal**    | \(\sum d_i \cdot 2^i\)                    |
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 | **Decimal → Binario**    | Divisiones sucesivas por 2                |
 | **Fracción → Binario**   | Multiplicaciones sucesivas por 2          |
 | **C-2 de N**             | Invertir bits + sumar 1                   |
 | **Extensión de signo**   | Repetir MSB a la izquierda                |
+<<<<<<< HEAD
 | **Rango C-2 (n bits)**   | -2^(n-1) a 2^(n-1) - 1                    |
 | **Potencias de 2 típicas** | 2¹⁰ ≈ 1K, 2²⁰ ≈ 1M, 2³⁰ ≈ 1G              |
+=======
+| **Rango C-2 (n bits)**   | \(-2^{n-1}\) a \(2^{n-1}-1\)              |
+| **Potencias de 2 típicas** | \(2^{10} \approx 1\text{K}\), \(2^{20} \approx 1\text{M}\), \(2^{30} \approx 1\text{G}\) |
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 
 Estas reglas y ejemplos son la base para resolver con soltura ejercicios de representación de la información en punto fijo y enteros con signo.

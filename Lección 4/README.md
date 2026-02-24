@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 - 1 bit de signo. [file:2]
 - 8 bits de exponente. [file:2]
@@ -15,9 +16,92 @@ Características cuantitativas del formato `float` (32 bits):
 
 Ejemplo en C (tal como aparece en la transparencia): [file:2]
 
+=======
+# Tema 2: Representación de la Información - Punto Flotante
+
+## Transparencia 50
+**Representación de Datos Numéricos Reales (Números en Punto Flotante)**
+
+## Transparencia 51
+**Coma Flotante**
+- La representación en punto fijo no es apropiada para ciertos números:
+- Ejemplo: \(6.023 \cdot 10^{23}\), \(1.6 \cdot 10^{-19}\), etc.
+- Es preferible usar la forma: **mantisa, base, exponente**.
+- El exponente hace "flotar la coma" de la mantisa.
+
+## Transparencia 52
+**Coma Flotante**
+- Si la mantisa está representada en una base `B` (p.e. `B=2`), entonces la base en punto flotante debe ser una potencia de `B`:
+- \(1.011 \cdot 2^{12} = 10.11 \cdot 2^{11}\)
+- \(1.011 \cdot 4^6 = 101.1 \cdot 4^5\)
+- Incrementos y decrementos de exponente implican desplazamientos a izquierda y derecha de la coma un número entero de posiciones.
+
+## Transparencia 53
+**Coma Flotante**
+- Fijada la base, un número en coma flotante es una pareja de números en punto fijo: **Mantisa-Exponente**.
+- Ejemplo:
+- Base 2.
+- 3 bits de mantisa en binario, en la forma `m.mm`.
+- 2 bits de exponente (representados en C-2).
+- `1.00 e 11` → \(1.0 \cdot 2^{-1} = 0.5\)
+- `1.10 e 01` → \(1.5 \cdot 2^1 = 3\)
+
+## Transparencia 54
+**Coma Flotante: Números Representables**
+- (El contenido parece incompleto o corrupto en el OCR; se asume una lista de combinaciones posibles, pero no está clara).
+
+## Transparencia 55
+**Coma Flotante: Bases Superiores. Ejemplo Base 4**
+- (El contenido está corrupto; se asume una extensión del concepto de base 4, pero no hay datos específicos).
+
+## Transparencia 56
+**Coma Flotante: Aumento del Exponente**
+- (El contenido está corrupto; se asume que trata sobre cómo ajustar el exponente, pero no hay detalles claros).
+
+## Transparencia 57
+**Coma Flotante: Aumento de Mantisa**
+- (El contenido está corrupto; se asume que trata sobre cómo ajustar la mantisa, pero no hay detalles claros).
+
+## Transparencia 58
+**Normalización de Mantisas**
+- \(6.023 \cdot 10^{23}\), \(60.23 \cdot 10^{22}\), \(602.3 \cdot 10^{21}\): varias formas de representar un mismo número.
+- Ejemplo: 5 bits → 32 combinaciones, pero solo 20 números representables (redundancia).
+- **Solución**: Fijar la coma respecto al dígito más significativo (DMS): **Normalización**.
+- Ejemplo: Solo la forma \(6.023 \cdot 10^{23}\) es válida.
+- El cero es un caso especial (no tiene DMS).
+
+## Transparencia 59
+**Normalización de Mantisas: Bit Implícito**
+- Solo las combinaciones `1.MM-EE` son válidas.
+- "Gastamos" un bit para guardar siempre un `1`.
+- **Solución**: Al representar, no guardar ese `1`.
+- **Bit implícito**: `1.011 e 11` se guarda como `011 e 11` (aumentamos la precisión sin coste, al evitar redundancia).
+- ¡Al operar con el número, hay que recuperar el bit implícito!
+
+## Transparencia 60
+**IEEE-754 de 32 bits**
+- Exponente `E` en exceso a `127` con 8 bits.
+- Mantisa en formato signo `S` (1 bit) - magnitud `M`.
+- La magnitud `M` tiene 24 bits, pero está normalizada con el bit más significativo (BMS) a la izquierda de la coma, y el BMS se hace implícito (23 bits).
+- Fórmula: \((-1)^S \cdot 1.M \cdot 2^{(E-127)}\)
+- Estructura:
+
+S EEEEEEEE MMMMMMMMMMMMMMMMMMMMMMM
+
+
+## Transparencia 61
+**IEEE-754 de 32 bits**
+- 8 bits para exponentes (rangos de \(10^{\pm 38}\)).
+- 23 bits para mantisa (precisión equivalente a 7 dígitos en base 10).
+- Ejemplo en C:
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
 ```c
 float a = 3.14159263523452345;
 main() {
     printf("%22.20f\n", a);
 }
 // Salida: 3.14159274101257324219
+<<<<<<< HEAD
+=======
+```
+>>>>>>> 286ac24e020a4eb320d7bcc1de3663f6544220cd
