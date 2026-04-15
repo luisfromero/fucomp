@@ -19,7 +19,7 @@ La asignatura se estructura en **6 temas teóricos** que cubren:
 
 Además, incluye **5 prácticas de laboratorio** que permiten aplicar los conocimientos teóricos mediante programación en ensamblador y trabajo con microcontroladores ESP32-C3 (arquitectura RISC-V).
 
-**Los powerpoints de la asignatura están en la carpeta [temas](temas)**.
+**Los powerpoints de la asignatura están en la carpeta [presentaciones](presentaciones)**.
 
 ## ¿Por qué GitHub?
 
