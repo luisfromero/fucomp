@@ -1,161 +1,169 @@
-# Práctica: Fundamentos de Computadores con RISC-V
+# Práctica 5 - Programación en Ensamblador RISC-V: Control de Hardware e Interrupciones
 
-Bienvenido a la práctica de introducción a la arquitectura de computadores. En esta sesión, dejaremos de lado la abstracción de alto nivel para controlar el hardware "con las manos desnudas" utilizando ensamblador **RISC-V**.
+## Hardware Utilizado
 
-## 🎯 Objetivos
-* Entender el concepto de **Memory Mapped I/O (MMIO)**: Escribir en memoria para actuar en el mundo físico.
-* Comprender las instrucciones de **desplazamiento de bits** (Shifts).
-* Practicar el flujo de control en ensamblador (Bucles y Saltos).
-* Visualizar la velocidad de ejecución de la CPU frente al ojo humano.
+### ESP32-C3 (Seeed XIAO) con Tarjeta de Expansión
 
-## 🛠 Material Necesario
-* 1x Placa **ESP32-C3 SuperMini** (Arquitectura RISC-V de 32 bits).
-* 4x LEDs Rojos.
-* 4x Resistencias de 220Ω (Rojo-Rojo-Marrón) o similares.
-* 1x Breadboard y cables.
+En esta práctica utilizamos la **ESP32-C3** con la **tarjeta de expansión XIAO**, no tanto por necesidad de potencia de cómputo, sino por razones pedagógicas:
 
-## 📸 Montaje del Hardware
-El montaje busca la simplicidad. Utilizaremos los pines **GPIO 0, 1, 2 y 3** como salidas.
+- **Perder el miedo a programar microcontroladores reales**: La ESP32-C3 es un microcontrolador moderno y accesible que permite interactuar directamente con hardware físico.
+- **Facilidad de acceso a periféricos**: La tarjeta de expansión proporciona acceso directo a buzzer, botones, LEDs y sensores sin necesidad de breadboards complejos.
+- **Preparación para proyectos reales**: Aprender a activar motores, leer sensores, y controlar actuadores es esencial en sistemas embebidos.
+- **Arquitectura RISC-V**: Oportunidad de trabajar con una arquitectura moderna, abierta y en crecimiento.
 
-### Vista General
-Coloca el microcontrolador en la breadboard dejando espacio para los cables.
-![Vista General del Montaje](media/foto1.jpg)
+## Conceptos Teóricos
 
-### Esquema de Conexión (El "Puente")
-Debido al tamaño compacto de la placa, usaremos cables para llevar las señales a una zona más amplia de la breadboard.
-1. Conecta **GND** a la línea azul (tierra) de la breadboard.
-2. Conecta los **GPIO 0, 1, 2 y 3** a los ánodos (patas largas) de los LEDs.
-3. Conecta los cátodos (patas cortas) a las resistencias, y estas a Tierra.
+### 1. Puertos Mapeados en Memoria (Memory-Mapped I/O)
 
-![Detalle de Conexiones](media/foto2.jpg)
+En el ESP32-C3, los periféricos (GPIO, UART, SPI, etc.) se controlan mediante **registros mapeados en memoria**. Esto significa que escribir en ciertas direcciones de memoria tiene efectos directos sobre el hardware.
 
-## 💻 El Reto de Software
+**Ventajas:**
+- Simplifica la programación: usar `sw` (store word) para controlar hardware
+- No requiere instrucciones especiales de I/O (a diferencia de arquitecturas x86 con `in`/`out`)
+- Uniformidad: todo el hardware se accede igual que la memoria RAM
 
-El proyecto combina un archivo "esqueleto" en C (`main.c`) que configura los periféricos, y tu tarea principal que será programar la lógica en ensamblador (`secuencia.S`).
+### 2. Interrupciones y Rutinas de Tratamiento de Interrupción (RTI/ISR)
 
-### Parte 1: El Desplazamiento Simple
-Implementa un bucle que encienda un LED, espere un tiempo, y desplace el bit a la izquierda (`slli`). Al llegar al último LED, debe reiniciar.
+**Interrupción**: Mecanismo hardware que permite que eventos externos (botón presionado, dato recibido, timer) interrumpan el flujo normal del programa.
 
-**Instrucciones clave:** `li`, `sw`, `addi`, `bnez`, `slli`.
+**RTI (Rutina de Tratamiento de Interrupción)** o **ISR (Interrupt Service Routine)**:
+- Función que se ejecuta automáticamente cuando ocurre una interrupción
+- Debe ser **muy rápida** (típicamente microsegundos)
+- No debe realizar operaciones bloqueantes
+- Patrón común: poner una bandera y retornar, el main loop procesa la acción
 
-Si tu lógica de estados y retardos es correcta, deberías ver este movimiento fluido :
+**Ventajas vs Polling:**
+- **Eficiencia**: La CPU puede hacer otras tareas en lugar de preguntar constantemente
+- **Menor latencia**: Respuesta inmediata al evento
+- **Menor consumo energético**: La CPU puede entrar en modo de bajo consumo
 
-<video src="media/video1.mp4" controls width="100%"></video>
+## Direcciones y Pines Utilizados
 
+### Direcciones de Memoria Mapeadas
 
-### Parte 2: El "Coche Fantástico" (Scanner Larson)
-Modifica tu código para que la luz no se reinicie bruscamente, sino que **rebote** de lado a lado.
-* Cuando llegue al bit 3 (izquierda), debe cambiar la dirección y usar desplazamientos a la derecha (`srli`).
-* Cuando llegue al bit 0 (derecha), debe volver a cambiar a la izquierda.
+| Dirección    | Nombre simbólico (ESP-IDF) | Función                                    |
+|--------------|----------------------------|--------------------------------------------|
+| `0x60004004` | `GPIO_OUT_REG`             | Escritura: establece el nivel de los GPIO  |
+| `0x60004008` | `GPIO_IN_REG`              | Lectura: lee el nivel actual de los GPIO   |
 
-### 🎥 Resultado Esperado
-Si tu lógica de estados y retardos es correcta, deberías ver este movimiento fluido :
+**Nota:** 
+- Estas son direcciones físicas del bus APB (Advanced Peripheral Bus) del ESP32-C3
+- Los nombres `GPIO_OUT_REG`, `GPIO_IN_REG` son **constantes** definidas en el SDK (ESP-IDF)
+- En ensamblador usamos directamente los números: `0x60004004`, `0x60004008`
 
-<video src="media/video2.mp4" controls width="100%"></video>
+### Pines Específicos Utilizados
 
-*(Si no puedes ver el video, revisa la carpeta media/video2.mp4)*
+#### Buzzer (Salida)
+- **Pin físico**: A3 en la tarjeta de expansión
+- **GPIO**: GPIO 5
+- **Máscara de bit**: `0x20` (bit 5 = `1 << 5`)
+- **Uso**: Generación de tonos mediante onda cuadrada
 
----
-
-## 🚀 Compilación y Carga
-Usaremos **PlatformIO** con el framework **ESP-IDF**.
-
-### ⚠️ Importante: Rutas de Compilación
-Due to limitations with OneDrive paths containing spaces and accents, **the project must be compiled from a path without spaces or special characters**.
-
-**Recommended workflow:**
-1. Copy the entire project to a temporary location: `C:\temp\practica5_temp`
-2. Compile and upload from there
-3. Copy modified files back to OneDrive when needed
-
-### Estructura del Proyecto
-```
-src/
-├── main.c              # Configuración del hardware en C
-├── secuencia.S         # Tu implementación en ensamblador
-└── secuencia-solucion.S # Implementación de referencia (renombrada)
+**Control del buzzer:**
+```riscv
+li t0, 0x20              # Máscara para GPIO 5
+lui t1, 0x60004          # Cargar dirección base
+addi t1, t1, 4           # GPIO_OUT_REG = 0x60004004
+sw t0, 0(t1)             # Encender (escribir 1 en bit 5)
+sw zero, 0(t1)           # Apagar (escribir 0)
 ```
 
-### Comandos de PlatformIO
-1. **Compilar** (desde ruta sin espacios): 
-   ```bash
-   pio run
+#### Botón de Usuario (Entrada con Interrupción)
+- **Pin físico**: Botón de usuario en tarjeta de expansión
+- **GPIO**: GPIO 3 (puede variar según la tarjeta, verificar con escaneo)
+- **Configuración**: Pull-up interno habilitado
+- **Tipo de interrupción**: Flanco descendente (`GPIO_INTR_NEGEDGE`)
+- **Uso**: Disparar la reproducción de secuencia de tonos
+
+**Lógica del botón:**
+- **Estado en reposo** (no presionado): `1` (por pull-up)
+- **Estado presionado**: `0` (conecta a GND)
+- **Interrupción**: Se dispara en la transición `1→0`
+
+### Máscara de Bits para GPIO
+
+Para controlar un GPIO específico mediante `GPIO_OUT_REG`, se usa una **máscara de bits**:
+
+```
+GPIO 5 → bit 5 → 0b00100000 → 0x20
+```
+
+**Operaciones:**
+- **Encender GPIO 5**: Escribir `0x20` en `0x60004004`
+- **Apagar GPIO 5**: Escribir `0x00` en `0x60004004`
+- **Múltiples GPIO**: Usar OR lógico de máscaras
+
+## Estructura del Código
+
+### Parámetros en Memoria (`.rodata`)
+
+Los parámetros de frecuencia y duración están almacenados en la sección de solo lectura:
+
+```riscv
+.section .rodata
+param_freq_alta:     .word 4000    # ~1600 Hz (tono agudo)
+param_freq_baja:     .word 12000   # ~1050 Hz (tono grave)
+param_duracion_media: .word 500     # ~400ms
+param_duracion_larga: .word 1500    # ~800ms
+param_pin_mask:      .word 0x20    # GPIO 5
+```
+
+### Flujo de Interrupción
+
+1. **Configuración** (en `main.c`):
+   - Instalar servicio de interrupciones: `gpio_install_isr_service()`
+   - Registrar RTI: `gpio_isr_handler_add(GPIO_NUM_3, rti_boton, NULL)`
+
+2. **Evento** (hardware):
+   - Usuario presiona el botón
+   - GPIO 3 cambia de `1` a `0`
+   - Controlador de interrupciones detecta flanco descendente
+
+3. **RTI ejecutada** (automática):
+   ```c
+   void IRAM_ATTR rti_boton(void* arg) {
+       boton_presionado = 1;  // Solo poner bandera (muy rápido)
+   }
    ```
 
-2. **Subir al microcontrolador**:
-   ```bash
-   pio run --target upload
+4. **Main loop procesa**:
+   ```c
+   if (boton_presionado) {
+       boton_presionado = 0;
+       ejecutar_secuencia(gpio_out_addr);  // Acción larga
+   }
    ```
 
-3. **Monitor serial** (opcional):
-   ```bash
-   pio device monitor
-   ```
+## Objetivos de Aprendizaje
 
-3. **Monitor serial** (opcional):
-   ```bash
-   pio device monitor
-   ```
+1. **Acceso directo a hardware**: Escribir en direcciones de memoria para controlar periféricos
+2. **Programación en ensamblador RISC-V**: Uso de registros, stack, llamadas a funciones
+3. **Gestión de interrupciones**: Configuración, RTI eficientes, sincronización
+4. **Generación de señales**: Crear ondas cuadradas con delays para producir tonos
+5. **Organización de código**: Separación entre datos (`.rodata`), código (`.text`), y funciones modulares
 
-### Configuración CMake
-El archivo `CMakeLists.txt` en `src/` debe incluir ambos archivos assembly:
-```cmake
-idf_component_register(SRCS "main.c" "secuencia.S" "secuencia-solucion.S" INCLUDE_DIRS ".")
+## Compilación y Carga
+
+```bash
+# Compilar
+pio run
+
+# Cargar al ESP32-C3
+pio run --target upload
+
+# Monitor serie (115200 baud)
+pio device monitor
 ```
 
----
+## Modos de Operación
 
-## ✅ Resultado del Proyecto
+El código tiene dos modos configurables mediante la variable `entrega`:
 
-### Estado de Implementación
-- **✅ Compilación exitosa**: Sin errores de sintaxis o linkado
-- **✅ Upload completado**: Firmware cargado correctamente en el ESP32-C3
-- **✅ Funcionalidad implementada**: Patrón "Coche Fantástico" operativo
+- **`entrega = false`**: Modo sin botón, reproduce la secuencia una vez al inicio
+- **`entrega = true`**: Modo con interrupción, reproduce al presionar el botón
 
-### Detalles Técnicos
-- **Microcontrolador**: ESP32-C3 (RISC-V 32-bit) en puerto COM5
-- **Memoria RAM utilizada**: 8,632 bytes (2.6%)  
-- **Memoria Flash utilizada**: 181,636 bytes (17.3%)
-- **Funciones implementadas**:
-  - `ejecutar_secuencia_asm`: Implementación principal del patrón
-  - `solucion_profesor`: Implementación de referencia (opcional)
+## Referencias
 
-### Funcionamiento
-Al ejecutarse, el programa muestra:
-```
-¡Hardware listo! Cediendo el control al Ensamblador RISC-V...
-```
-
-Y continúa ejecutando el patrón de LEDs indefinidamente con:
-- Movimiento suave de izquierda a derecha
-- Rebote en los extremos (GPIO 0 y GPIO 3)
-- Temporización ajustada para visualización óptima
-
----
-
-## 🎓 Conceptos Aprendidos
-- **Memory Mapped I/O**: Escritura directa en registro `0x60004004`
-- **Operaciones de bits**: `slli` (shift left), `srli` (shift right)  
-- **Control de flujo**: Bucles condicionales con `beq`, `bnez`
-- **Integración C/Assembly**: Llamadas entre lenguajes
-- **Gestión de estados**: Máquina de estados para el rebote
-- **Temporización**: Bucles de delay para control de velocidad
-
----
-
-## 📁 Archivos del Proyecto
-```
-Practica5/
-├── README.md
-├── CMakeLists.txt
-├── platformio.ini
-├── src/
-│   ├── main.c              # Configuración hardware y punto de entrada
-│   ├── secuencia.S         # Implementación del patrón en RISC-V Assembly  
-│   ├── secuencia-solucion.S # Referencia del profesor
-│   └── CMakeLists.txt
-└── media/
-    ├── foto1.jpg           # Vista general del montaje
-    ├── foto2.jpg           # Detalle de conexiones  
-    └── video1.mp4          # Demostración funcionando
-```
+- [ESP32-C3 Technical Reference Manual](https://www.espressif.com/sites/default/files/documentation/esp32-c3_technical_reference_manual_en.pdf)
+- [RISC-V Assembly Programmer's Manual](https://github.com/riscv-non-isa/riscv-asm-manual/blob/master/riscv-asm.md)
+- [Seeed XIAO ESP32C3 Wiki](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/)
