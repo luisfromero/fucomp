@@ -7,17 +7,7 @@
 - **Descarga**: https://code.visualstudio.com/
 - **Instalación**: Ejecutar instalador y seguir asistente
 
-
-### 2. PlatformIO IDE (Extensión de VS Code)
-- **Instalación**:
-  1. Abrir VS Code
-  2. Ir a extensiones (Ctrl+Shift+X)
-  3. Buscar "PlatformIO IDE"
-  4. Instalar la extensión oficial (por PlatformIO)
-  5. Reiniciar VS Code
-- **Tiempo de instalación**: 5-10 minutos (descarga herramientas automáticamente)
-
-### 3. Python (necesario para platformio)
+### 2. Python
 - **Versión**: 3.8 o superior (recomendado 3.12)
 - **Descarga**: https://www.python.org/downloads/
 - **Importante durante instalación**:
@@ -29,9 +19,14 @@
   pip --version
   ```
 
-
-## Software recomendado. No necesario para esta práctica.
-
+### 3. PlatformIO IDE (Extensión de VS Code)
+- **Instalación**:
+  1. Abrir VS Code
+  2. Ir a extensiones (Ctrl+Shift+X)
+  3. Buscar "PlatformIO IDE"
+  4. Instalar la extensión oficial (por PlatformIO)
+  5. Reiniciar VS Code
+- **Tiempo de instalación**: 5-10 minutos (descarga herramientas automáticamente)
 
 ### 4. Git (Opcional pero recomendado)
 - **Versión**: 2.30 o superior
