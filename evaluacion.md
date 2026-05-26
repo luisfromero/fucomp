@@ -69,3 +69,31 @@ Los componentes del examen final son:
 - **Test de prácticas**: Evaluación final de los conocimientos prácticos adquiridos (5 puntos)
 
 Esta estructura garantiza que todos los estudiantes demuestren el dominio de los contenidos más relevantes de la asignatura en la evaluación final, independientemente de su rendimiento en la evaluación continua.
+
+
+## Calificación y Mínimos
+
+La nota media se calcula con la fórmula
+
+```
+t2·0.15+t3·0.15+t4·0.15+t5·0.10+t6·0.15+p1·0.05+p2·0.05+p3·0.05+p4·0.05+p5·0.05+test·0.05
+```
+
+
+### Eliminación de la parte de teoría (CASIUM)
+
+Si no has obtenido más de un 6, debes examinarte en el final de los temas 2, 4 y 5
+
+### Mínimos de cada tema
+
+Se aprueba la asignatura si cumples las siguientes condiciones:
+
+- **Has obtenido más de 5** tras realizar la media ponderada de las calificaciones
+- **Has obtenido más de  3.0** en el tema 2
+- **Has obtenido más de  3.5** en el tema 3
+- **Has obtenido más de  3.0** en el tema 4
+- **Has obtenido más de  3.0** en el tema 5
+- **Has obtenido más de  3.0** en el tema 6
+
+- **Has superado (>5) tres o más prácticas**
+
